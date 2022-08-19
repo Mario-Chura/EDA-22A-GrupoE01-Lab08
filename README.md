@@ -59,19 +59,20 @@
 
 ### I.	SOLUCIÓN DE EJERCICIOS/PROBLEMAS
 #	
-1.  Ejercicio 1 : Crear un repositorio en GitHub, donde incluyan la resolucion de los ejercicios propuestos y el informe.
+1.  Ejercicio 1: Crear un repositorio en GitHub, donde incluyan la resolución de los ejercicios propuestos y el informe.
+	- El link del repositorio es el siguiente: https://github.com/Mario-Chura/EDA-22A-GrupoE01-Lab08.git 
+2.  Ejercicio 2: Implementar el cogido de Grafo cuya representación sea realizada mediante LISTA DE ADYACENCIA. (3 puntos)
 	- Procedimiento
-2.  Ejercicio 2 : Implementar el cogido de Grafo cuya representacion sea realizada mediante LISTA DE ADYACENCIA. (3 puntos)
+3.  Ejercicio 3: Implementar BSF, DFS y Dijkstra con sus respectivos casos de prueba. (5 puntos)
 	- Procedimiento
-3.  Ejercicio 3 : Implementar BSF, DFS y Dijkstra con sus respectivos casos de prueba. (5 puntos)
-	- Procedimiento
-4.  Ejercicio 4 : Solucionar el siguiente ejercicio: (5 puntos)
+4.  Ejercicio 4: Solucionar el siguiente ejercicio: (5 puntos)
 El grafo de palabras se define de la siguiente manera: cada vértice es una palabra en el idioma Inglés y dos palabras son adyacentes si difieren exactamente en una posición. Por ejemplo, las cords y los corps son adyacentes, mientras que los corps y crops no lo son.<br>
 	a) Dibuje el grafo definido por las siguientes palabras: words cords corps coops crops drops drips grips gripe grape graph <br>
 	b) Mostrar la lista de adyacencia del grafo. <br>
 	- Procedimiento
-5.  Ejercicio 5 : Realizar un metodo en la clase Grafo. Este metodo permitira saber si un grafo esta incluido en otro. Los parametros de entrada son 2 grafos y la salida del metodo es true si hay inclusion y false el caso contrario. (4 puntos)
+5.  Ejercicio 5: Realizar un método en la clase Grafo. Este método permitirá saber si un grafo está incluido en otro. Los parámetros de entrada son 2 grafos y la salida del método es true si hay inclusión y false el caso contrario. (4 puntos)
 	- Procedimiento
+
 	
    
 #
