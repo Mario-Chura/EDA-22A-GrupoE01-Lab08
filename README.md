@@ -59,16 +59,18 @@
 
 ### I.	SOLUCIÓN DE EJERCICIOS/PROBLEMAS
 #	
-1.  Ejercicio 1 : Modificar el método de obtención de valor dado una clave (5 puntos)
+1.  Ejercicio 1 : Crear un repositorio en GitHub, donde incluyan la resolucion de los ejercicios propuestos y el informe.
 	- Procedimiento
-2.  Ejercicio 2 : Mostrar en un diagrama de árbol gráficamente la estructura final para los datos
-ingresados. (4 puntos)
+2.  Ejercicio 2 : Implementar el cogido de Grafo cuya representacion sea realizada mediante LISTA DE ADYACENCIA. (3 puntos)
 	- Procedimiento
-3.  Ejercicio 3 : El método toString() del árbol, retorna lo siguiente. ¿Por qué están entre paréntesis
-ciertas claves? (4 puntos)
+3.  Ejercicio 3 : Implementar BSF, DFS y Dijkstra con sus respectivos casos de prueba. (5 puntos)
 	- Procedimiento
-4.  Ejercicio 4 : Agregar un nodo adicional (www.youtube.com, 134.24.13.78) y mostrarlo paso a
-paso. (3 puntos)
+4.  Ejercicio 4 : Solucionar el siguiente ejercicio: (5 puntos)
+El grafo de palabras se define de la siguiente manera: cada vértice es una palabra en el idioma Inglés y dos palabras son adyacentes si difieren exactamente en una posición. Por ejemplo, las cords y los corps son adyacentes, mientras que los corps y crops no lo son.<br>
+	a) Dibuje el grafo definido por las siguientes palabras: words cords corps coops crops drops drips grips gripe grape graph <br>
+	b) Mostrar la lista de adyacencia del grafo. <br>
+	- Procedimiento
+5.  Ejercicio 5 : Realizar un metodo en la clase Grafo. Este metodo permitira saber si un grafo esta incluido en otro. Los parametros de entrada son 2 grafos y la salida del metodo es true si hay inclusion y false el caso contrario. (4 puntos)
 	- Procedimiento
 	
    
@@ -76,6 +78,8 @@ paso. (3 puntos)
 
 ### II.	SOLUCIÓN DEL CUESTIONARIO
 
+-¿Cuantas variantes del algoritmo de Dijkstra hay y cuál es la diferencia entre ellas? (1 puntos) <br>
+-Invetigue sobre los ALGORITMOS DE CAMINOS MINIMOS e indique, ¿Qué similitudes encuentra, qué diferencias, en qué casos utilizar y porque? (2 puntos) <br>
 
 #
 
@@ -93,5 +97,5 @@ paso. (3 puntos)
 
 -   1
 -   2
--   3
--   4
+-   Escuela de Pedagogía en Educación Matemática, Marcelino Álvarez, et.al., http://repobib.ubiobio.cl/jspui/bitstream/123456789/1953/3/Alvarez_Nunez_Marcelino.pdf
+-   Weiss M., Data Structures & Problem Solving Using Java, 2010, Addison-Wesley.
