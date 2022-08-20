@@ -8,4 +8,15 @@ public class GraphLink <E>{
 	public GraphLink() { 
 		listVertex = new ListLinked<Vertex<E>>();//Se inicializa la lista, generando una lista vacìa de aristas
 	}
+
+	//Metodos
+
+	public void insertVertex(E data) { //Recibe como argumento la informaciòn que va a almacenar el vertice
+		Vertex<E> nuevo = new Vertex<E>(data); //Primero se declara e inicializa, enviando el elemento(data)
+		if (this.listVertex.search(nuevo) != null) { //si es diferente de nulo indica que ese vertice ya está dentro de la lista
+			System.out.println("El vertice ya fue insertado anteriormente ... ");
+		}
+		this.listVertex.insertFirst(nuevo);//en caso no se encuentre, se inserta en el atributo lista el vertice
+		System.out.println("vertice " + nuevo + " insertado");
+	}
 }
