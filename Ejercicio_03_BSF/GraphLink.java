@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 public class GraphLink<E> {
 	//Atributos
 	protected ListLinked<Vertex<E>> listVertex;
