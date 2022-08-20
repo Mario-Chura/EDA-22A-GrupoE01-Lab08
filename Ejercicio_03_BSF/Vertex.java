@@ -19,6 +19,9 @@ public class Vertex<E> {
         return false;
     }
     
+    public String toString() { //Muestra el dato y la lista de adyacencia del vertice
+        return this.data + " --> " + this.listAdj.toString() + "\n";
+    }    
 
 
 }
