@@ -12,6 +12,15 @@ public class ListLinked<T> {
 		return this.first == null;
 	}
 
+	public T search(T data) { //Recibe como argumento al elemento
+		Node<T> nodo = this.first; //Nodo cabeza se mantiene fijo
+		while(nodo != null && !nodo.data.equals(data))//Se va iterando mientras aun no encuentre el elemento
+			nodo = nodo.next; //se realiza el movimiento
+		if (nodo != null) //Cumple, cuando exista el elemento
+			return nodo.data;//Retorna el dato del elemento buscado
+		return null; //Retorna null, cuando termine de recorrer la lista
+	}
+
 	public String toString() {
 		String r = "";
 		Node<T> aux = this.first;
@@ -21,4 +30,5 @@ public class ListLinked<T> {
 			}
 		return r; 
 	}
+
 }
