@@ -26,7 +26,18 @@ public class Graph {
             path[i] = "";
         }
     }
+
+    //Metodos
+
+    public static void showEdges(){ // Imprime la lista de adyacencia
+        for (int[] edse: edges
+        ) {
+            System.out.println(Arrays.toString(edse));
+        }
+
+    }
     
+
 
 
 }
