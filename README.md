@@ -67,9 +67,16 @@
 	- Procedimiento
 4.  Ejercicio 4: Solucionar el siguiente ejercicio: (5 puntos)
 El grafo de palabras se define de la siguiente manera: cada vértice es una palabra en el idioma Inglés y dos palabras son adyacentes si difieren exactamente en una posición. Por ejemplo, las cords y los corps son adyacentes, mientras que los corps y crops no lo son.<br>
+- Definimos el grafo de la siguiente manera: cada vértice es una palabra en el idioma inglés y dos palabras son adyacentes si se diferencian exactamente en una posición. Por ejemplo, las cords y los corps son adyacentes, mientras que los corps y crops no lo son.
+
 	a) Dibuje el grafo definido por las siguientes palabras: words cords corps coops crops drops drips grips gripe grape graph <br>
+	
+	![imagen](Ejercicio_04/Img2.jpg)
+	
 	b) Mostrar la lista de adyacencia del grafo. <br>
-	- Procedimiento
+	
+	![imagen](Ejercicio_04/Img3.jpg)
+	
 5.  Ejercicio 5: Realizar un método en la clase Grafo. Este método permitirá saber si un grafo está incluido en otro. Los parámetros de entrada son 2 grafos y la salida del método es true si hay inclusión y false el caso contrario. (4 puntos)
 	- Procedimiento
 
