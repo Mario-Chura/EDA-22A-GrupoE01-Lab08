@@ -5,7 +5,7 @@ public class GraphLink <E>{
 	//Constructor
 
 	//Crea una lista vacia	
-	public class GraphLink() { 
+	public GraphLink() { 
 		listVertex = new ListLinked<Vertex<E>>();//Se inicializa la lista, generando una lista vacìa de aristas
 	}
 
