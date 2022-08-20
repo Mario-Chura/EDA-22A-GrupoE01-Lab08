@@ -125,7 +125,7 @@ Se analiza los 3 algoritmos más importantes:
 #
 -Conclusion 1 <br>
 -Conclusion 2 <br>
--Conclusion 3 <br>
+-Según lo investigado el algoritmo de Dijkstra nos proporciona información a los nodos sobre el estado de toda red, permitiendo tomar decisiones de la ruta, a partir de parámetros como la capacidad y el retardo del enlace. <br>
 -Conclusion 4 <br>
 -Conclusion 5 <br>
 #
