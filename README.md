@@ -96,7 +96,10 @@ El grafo de palabras se define de la siguiente manera: cada vértice es una pala
 
 <div align="center"><h2> REFERENCIAS Y BIBLIOGRAFÍA </h2></div> <br>
 
--   1
--   2
+-   http://bioinfo.uib.es/~joemiro/teach/labmat/Old/labmatold/2006_7/TdGrafos.pdf
+-   http://bioinfo.uib.es/~joemiro/teach/labmat/Old/labmatold/2006_7/TdGrafos.pdf
 -   Escuela de Pedagogía en Educación Matemática, Marcelino Álvarez, et.al., http://repobib.ubiobio.cl/jspui/bitstream/123456789/1953/3/Alvarez_Nunez_Marcelino.pdf
 -   Weiss M., Data Structures & Problem Solving Using Java, 2010, Addison-Wesley.
+-   http://www.dma.fi.upm.es/personal/gregorio/matematica_discreta_II/31DistCaminos.pdf
+-   https://www.ecured.cu/Algoritmo_de_Dijkstra
+-   https://jariasf.wordpress.com/2013/01/01/camino-mas-corto-algoritmo-de-bellman-ford/
