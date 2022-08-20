@@ -46,9 +46,10 @@ public class ListLinked<T> {
 		String r = "";
 		Node<T> aux = this.first;
 			while(aux != null) {
-				r = r + aux.data; //voy concatenando la información
+				r = r + aux.data; //Se concatena la informacion
 				aux = aux.next;
 			}
 			return r; 
 	}
+
 }
