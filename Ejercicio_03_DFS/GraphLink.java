@@ -39,5 +39,15 @@ public class GraphLink<E> {
 		return this.listVertex.toString();
 	}
 
+	private void initLabel() {
+		Node<Vertex<E>> aux = this.listVertex.first;
+		for (; aux != null; aux = aux.getNext()) {
+			aux.data.label = 0;
+			Node<Edge<E>> auxE = aux.data.listAdj.first;
+			for (; auxE != null; auxE = auxE.getNext())
+				auxE.data.label = 0;
+		}
+	}
+
 
 }
