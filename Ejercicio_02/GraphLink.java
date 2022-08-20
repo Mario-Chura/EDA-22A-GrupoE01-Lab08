@@ -19,8 +19,15 @@ public class GraphLink <E>{
 		this.listVertex.insertFirst(nuevo);//en caso no se encuentre, se inserta en el atributo lista el vertice
 		System.out.println("vertice " + nuevo + " insertado");
 	}
-	
+
+	public void insertEdge(E verOri, E verDest) {
+		Vertex<E> refOri = this.listVertex.search(new Vertex<E>(verOri));//Se busca en la lista de vértices el origen 
+		Vertex<E> refDest = this.listVertex.search(new Vertex<E>(verDest));//Se busca en la lista de vértices el destino
+
+	}
+
 	public String toString() {
 		return this.listVertex.toString();
 	}
+
 }
