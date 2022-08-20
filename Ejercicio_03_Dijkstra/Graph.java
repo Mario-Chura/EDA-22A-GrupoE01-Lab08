@@ -1,4 +1,7 @@
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Graph {
     //Atributos    
     private int n; //número de punto fijo n
