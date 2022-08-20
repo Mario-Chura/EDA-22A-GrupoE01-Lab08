@@ -14,6 +14,16 @@ public class ListLinked<T> {
 		return this.first == null;	
 	}
 
+	//Metodo search recibe un tipo data, retorna un tipo data
+	public T search(T data) { //recibe como parametro el elemento
+		Node<T> nodo = this.first; //nodo cabeza se mantiene fija
+		while(nodo != null && !nodo.data.equals(data))//se va iterando mientras no se encuentre el elemento
+			nodo = nodo.next;//se realiza el movimiento al sgte nodo
+		if (nodo != null) //Al cumplirse, significa que el elemento existe
+			return nodo.data;//por consiguiente se devuelve el dato del elemento que se busca
+		return null; //cuando recorra toda la lista y no encuentre al elemento
+	}
+
 	//Para mostrar la informacion del Grafo
 	public String toString() {
 		String r = "";
