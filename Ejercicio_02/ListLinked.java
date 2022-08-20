@@ -6,4 +6,11 @@ public class ListLinked<T> {
 	public ListLinked () {
 		this.first = null;
 	}
+
+	//Metodos
+
+	public boolean isEmpty() {
+		return this.first == null;	
+	}
+	
 }
