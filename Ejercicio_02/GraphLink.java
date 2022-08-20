@@ -19,4 +19,8 @@ public class GraphLink <E>{
 		this.listVertex.insertFirst(nuevo);//en caso no se encuentre, se inserta en el atributo lista el vertice
 		System.out.println("vertice " + nuevo + " insertado");
 	}
+	
+	public String toString() {
+		return this.listVertex.toString();
+	}
 }
