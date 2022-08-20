@@ -5,7 +5,7 @@ public class GraphLink <E>{
 	//Constructor
 
 	//Crea una lista vacia	
-	public GraphLink() { 
+	public class GraphLink() { 
 		listVertex = new ListLinked<Vertex<E>>();//Se inicializa la lista, generando una lista vacìa de aristas
 	}
 
@@ -39,7 +39,7 @@ public class GraphLink <E>{
 		refOri.listAdj.insertFirst(new Edge<E>(refDest)); //Se inserta en origen, cuyo destino es refDest
 		refOri.listAdj.insertFirst(new Edge<E>(refOri)); //Se inserta en destino(refDest), cuyo fin es el origen. En caso de ser un no dirigido, se elimina esta lìnea 
 	}
-	
+
 	//toString
 	public String toString() {
 		return this.listVertex.toString();
