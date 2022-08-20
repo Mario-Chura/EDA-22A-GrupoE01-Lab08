@@ -9,6 +9,24 @@ public class Graph {
     private static int[][] edges; //conjunto de aristas
     private boolean[] isVisited; //si ha sido visitado es el marcador visitado
 
+    //Constructor
+    public  Graph(int n){
+        this.n = n;
+        numberOfEdges=0;
+        Vertax = new ArrayList<>(n);
+        edges  = new int[n][n];
+        isVisited = new boolean[n+1];
+        distance = new double[n];
+        for (int i = 0; i <n ; i++) {
+            distance[i] = Double.POSITIVE_INFINITY;
+        }
+
+        path = new String[n];
+        for (int i = 0; i <n ; i++) {
+            path[i] = "";
+        }
+    }
     
+
 
 }
