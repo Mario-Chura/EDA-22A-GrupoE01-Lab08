@@ -61,6 +61,30 @@ public class GraphLink<E> {
 		labels();
 		BFSRec(v);
 	}
+	private void BFSRec(Vertex<E> vertice) {
+		LinkedList<Vertex<E>> queue = new LinkedList<>();
+		queue.add(vertice);
+		vertice.label = 1;
+		int i = 0;
+		while (queue.size() != 0) {
+			//retiramos de la cola y mostramos
+			vertice = queue.poll();
+            System.out.print(vertice.data +", ");
+            Node<Edge<E>> e = vertice.listAdj.first;
+            for (; e != null; e = e.getNext()) {
+            	if(e.data.label == 0) {
+            		Vertex<E> w = e.data.refDest;
+            		if(w.label == 0) {
+            			e.data.label = 1;
+            			w.label = 1;
+            			queue.add(w);
+            		}else {
+            			w.label = 2;
+            		}
+            	}
+            }
+		}
+	}
 
 		
 
