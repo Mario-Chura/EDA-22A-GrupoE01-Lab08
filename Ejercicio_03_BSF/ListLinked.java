@@ -25,10 +25,10 @@ public class ListLinked<T> {
 		this.first = new Node<T>(data, this.first);
 	}
 	private T remove(T data) {
-		T item = null;
-		Node<T> aux = this.first;
+		T item = null; //variable tipo elemento, auxiliar
+		Node<T> aux = this.first; //auxiliar toma referencia del primero
 		if (this.first != null && this.first.data.equals(data)) {
-			item = first.data;
+			item = first.data; 
 			first = first.next;
 
 		} else {
