@@ -66,6 +66,36 @@ public class Graph {
     public void dijkStra(int index ){
         int CO; // CO son las coordenadas necesarias para la iteración
         int headIndex = index; //es el vértice inicial de cada DIJKSTRA
+        distance[index]=0; // Establece la distancia desde el punto inicial al punto inicial, naturalmente 0
+
+        while (!isVisited[headIndex]){            
+            CO = getFirstCO(headIndex); // CO es la primera CO que no ha sido visitada
+            while(isVisited[CO]){
+                CO = getNextCO(headIndex,CO);
+            }
+
+            /*
+                * Si el vértice headIndex no tiene vértices adyacentes que no hayan sido visitados, 
+                * la coordenada del vértice se obtiene como n, lo que indica que es el último nodo desconocido, 
+                * y solo necesita establecerse como conocido
+            */
+            if (CO==n) {
+                isVisited[headIndex]=true;
+                System.out.println("Coordenada no encontrada ");
+            }else {
+                while (!isVisited[CO]&&CO<n) { // Para todos los vértices adyacentes a través de un bucle
+                    isVisited[headIndex]=true;
+                    double currentDis = distance[headIndex]+edges[headIndex][CO];
+                    if (currentDis<distance[CO]) {
+                        distance[CO] = currentDis;
+                        path[CO] = path[headIndex]+" "+Vertax.get(headIndex);
+                    }
+
+                    CO = getNextCO(headIndex, CO);
+                }
+            }
+            headIndex = indexGet(distance,isVisited);
+        }
         
 
     }
