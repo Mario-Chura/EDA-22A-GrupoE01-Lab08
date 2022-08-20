@@ -39,6 +39,9 @@ public class Graph {
     public  int GetSizeOfGraph(ArrayList<String> Vertax){ // Permite obtener el número de vértices
         return Vertax.size();
     }
+    public  void addVertax(String s){ // Agregar vértice
+        Vertax.add(s);
+    }
     
 
 }
