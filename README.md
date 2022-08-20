@@ -110,6 +110,7 @@ Resuelve el problema del camino estocástico más corto con un peso probabilíst
 - MinimumSpanningTree
 Se analiza los 3 algoritmos más importantes:
 
+![imagen](Ejercicio_04/Img1.jpg)
 
 #
 
