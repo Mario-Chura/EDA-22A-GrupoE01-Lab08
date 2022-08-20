@@ -24,6 +24,23 @@ public class ListLinked<T> {
 		System.out.println("pasó 1");
 		this.first = new Node<T>(data, this.first);
 	}
+	private T remove(T data) {
+		T item = null; //variable tipo elemento, auxiliar
+		Node<T> aux = this.first; //auxiliar toma referencia del primero
+		if (this.first != null && this.first.data.equals(data)) {
+			item = first.data;
+			first = first.next;
+
+		} else {
+			while (aux.next != null && !aux.next.data.equals(data))
+				aux = aux.getNext();
+			if (aux.getNext() != null) {
+				item = aux.next.data;
+				aux.next = aux.next.next;
+			}
+		}
+		return item;
+	}
 
 	public String toString() {
 		String r = "";
