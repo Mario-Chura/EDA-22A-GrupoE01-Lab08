@@ -35,6 +35,9 @@ public class GraphLink<E> {
 		refOri.listAdj.insertFirst(new Edge<E>(refDest, weight)); //Se inserta en origen(refOri), cuyo destino es "refDest"
 		refDest.listAdj.insertFirst(new Edge<E>(refOri, weight)); //Se inserta en destino(refDest), cuyo destino es origen(refOri), en caso de ser no dirigido se elimina esta linea
 	}
+	public String toString() {
+		return this.listVertex.toString();
+	}
 
 
 }
