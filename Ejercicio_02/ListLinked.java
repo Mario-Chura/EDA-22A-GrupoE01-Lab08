@@ -12,5 +12,14 @@ public class ListLinked<T> {
 	public boolean isEmpty() {
 		return this.first == null;	
 	}
-	
+
+	public String toString() {
+		String r = "";
+		Node<T> aux = this.first;
+			while(aux != null) {
+				r = r + aux.data; //voy concatenando la información
+				aux = aux.next;
+			}
+			return r; 
+	}
 }
