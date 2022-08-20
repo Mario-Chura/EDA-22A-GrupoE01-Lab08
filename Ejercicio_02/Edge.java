@@ -14,13 +14,22 @@ public class Edge<E> { //Lo que se encapsula en cada elemento de la lista enlaza
 	}
 	
 	//Metodos
-	
+
 	public boolean equals(Object o) {
 		if(o instanceof Edge<?>) {
 			Edge<E> e = (Edge<E>) o;
 			return this.refDest.equals(e.refDest);
 		}
 		return false;
+	}
+
+	//Metodo toString: Información del vértice destino y en caso tenga, la de su peso
+	public String toString() {
+		if (this.weight > -1) {
+			return refDest.data + " [" + this.weight + "], ";
+		}else {
+			return refDest.data + ", "; 
+		}
 	}	
 	
 }
