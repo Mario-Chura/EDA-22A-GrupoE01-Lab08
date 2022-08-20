@@ -54,6 +54,11 @@ public class Graph {
         }
         return n;
     }
+    public  void addEdges(int e1,int e2 , int weight){ // Agregar borde
+        edges[e1][e2] = weight;        
+        numberOfEdges++;
+    }
+
 
 
 }
