@@ -32,10 +32,11 @@ public class ListLinked<T> {
 			first = first.next;
 
 		} else {
-			while (aux.next != null && )
+			while (aux.next != null && !aux.next.data.equals(data))
 				aux = aux.getNext();
 			if (aux.getNext() != null) {
-				item = aux.next.data;				
+				item = aux.next.data;
+				aux.next = aux.next.next;
 			}
 		}
 		return item;
@@ -45,7 +46,7 @@ public class ListLinked<T> {
 		String r = "";
 		Node<T> aux = this.first;
 			while(aux != null) {
-				r = r + aux.data; //voy concatenando la información
+				r = r + aux.data; //Se concatena la informacion
 				aux = aux.next;
 			}
 		return r; 
