@@ -49,6 +49,18 @@ public class GraphLink<E> {
 				OtherAux.data.label = 0;
 		}
 	}
+	
+	//BSF - Breadth First Search - Recorrido en anchura 
+	public void BSF(E data) {
+		Vertex<E> nuevo = new Vertex<E>(data);
+		Vertex<E> v = this.listVertex.search(nuevo);
+		if (v == null) {
+			System.out.println("Vertice no existe");
+			return;
+		}
+		labels();
+		BSFRec(v);
+	}
 		
 		
 
