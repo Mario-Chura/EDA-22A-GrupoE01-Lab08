@@ -24,6 +24,10 @@ public class ListLinked<T> {
 		System.out.println("pasó 1");
 		this.first = new Node<T>(data, this.first);
 	}
+	private T remove(T data) {
+		T item = null;
+		Node<T> aux = this.first;
+	}
 
 	public String toString() {
 		String r = "";
