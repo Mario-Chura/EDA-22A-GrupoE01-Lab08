@@ -84,7 +84,7 @@ public class Graph {
             */
             if (CO==n) {
                 isVisited[headIndex]=true;
-                System.out.println("Coordenada no encontrada ");
+                //System.out.println("Coordenada no encontrada ");
             }else {
                 while (!isVisited[CO]&&CO<n) { // Para todos los vértices adyacentes a través de un bucle
                     isVisited[headIndex]=true;
