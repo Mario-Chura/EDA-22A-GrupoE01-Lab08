@@ -17,4 +17,25 @@ public class GraphLink<E> {
 		System.out.println("vertice " + nuevo + " insertado");
 	}
 
+	public void insertEdge(E verOri, E verDest) {
+		this.insertEdge(verOri, verDest, -1);
+	}
+	public void insertEdge(E verOri, E verDest, int weight) {
+		Vertex<E> refOri = this.listVertex.search(new Vertex<E>(verOri)); //Se busca en la lista de vértices, el origen
+		Vertex<E> refDest = this.listVertex.search(new Vertex<E>(verDest));//Asimismo se busca el destino
+		//En caso de existir, se devuelve la referencia del dato.
+		if (refOri == null || refDest == null) {
+			System.out.println("Vertice origen y/o destino no existen ... ");
+			return;
+		}
+		if (refOri.listAdj.search(new Edge<E>(refDest)) != null) {
+			System.out.println("Arista ya fue insertada anteriormente ... ");
+			return;
+		}
+		refOri.listAdj.insertFirst(new Edge<E>(refDest, weight)); //Se inserta en origen(refOri), cuyo destino es "refDest"
+		refDest.listAdj.insertFirst(new Edge<E>(refOri, weight)); //Se inserta en destino(refDest), cuyo destino es origen(refOri), en caso de ser no dirigido se elimina esta linea
+	}
+		
+		
+
 }
