@@ -42,6 +42,18 @@ public class Graph {
     public  void addVertax(String s){ // Agregar vértice
         Vertax.add(s);
     }
-    
+    public int getFirstCO(int index){ // Obtiene el primer vértice adyacente del vértice especificado
+        for (int i = 0; i <Vertax.size() ; i++) {
+            if (edges[index][i]>0) return i;
+        }
+        return n;
+    }
+    public int getNextCO(int index,int firstCO){ // Obtiene los vértices adyacentes secuenciales del vértice especificado
+        for (int i =firstCO+1 ; i <Vertax.size() ; i++) {
+            if (edges[index][i]>0) return i;
+        }
+        return n;
+    }
+
 
 }
