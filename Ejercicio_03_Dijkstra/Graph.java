@@ -61,7 +61,15 @@ public class Graph {
     public int getNumberOfEdges(){ // Obtiene el número de aristas
         return numberOfEdges;
     }
-    
+
+    //DijkStra
+    public void dijkStra(int index ){
+        int CO; // CO son las coordenadas necesarias para la iteración
+        int headIndex = index; //es el vértice inicial de cada DIJKSTRA
+        
+
+    }
+
 
 
 
