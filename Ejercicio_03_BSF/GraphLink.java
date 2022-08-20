@@ -1,7 +1,11 @@
 public class GraphLink<E> {
 	//Atributos
+	protected ListLinked<Vertex<E>> listVertex;
 
-	//Constructores
+	//Constructor
+	public GraphLink() {
+		listVertex = new ListLinked<Vertex<E>>();
+	}
 	
 	//Metodos
 
