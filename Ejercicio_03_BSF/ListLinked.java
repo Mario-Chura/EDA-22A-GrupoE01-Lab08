@@ -27,6 +27,18 @@ public class ListLinked<T> {
 	private T remove(T data) {
 		T item = null;
 		Node<T> aux = this.first;
+		if (this.first != null && this.first.data.equals(data)) {
+			item = first.data;
+			first = first.next;
+
+		} else {
+			while (aux.next != null && )
+				aux = aux.getNext();
+			if (aux.getNext() != null) {
+				item = aux.next.data;				
+			}
+		}
+		return item;
 	}
 
 	public String toString() {
