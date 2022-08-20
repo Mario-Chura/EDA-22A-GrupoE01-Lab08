@@ -2,20 +2,20 @@ public class Test {
 	public static void main(String[] args) {
 		GraphLink<String> g = new GraphLink<String>();
 		
-		g.insertVertex("lima");
+		g.insertVertex("arequipa");
 		System.out.println(g);
-		g.insertVertex("aqp");
-		g.insertVertex("cusco");
-		g.insertVertex("piura");
-		g.insertVertex("tarapoto");
-		g.insertEdge("lima", "arequipa");
-		g.insertEdge("cusco", "aqp");
-		g.insertEdge("piura", "lima");
-		g.insertEdge("cusco", "lima");
-		g.insertEdge("piura", "tarapoto");
+		g.insertVertex("JLByR");
+		g.insertVertex("hunter");
+		g.insertVertex("sachaca");
+		g.insertVertex("characato");
+		g.insertEdge("arequipa", "bustamante");
+		g.insertEdge("hunter", "JLByR");
+		g.insertEdge("sachaca", "arequipa");
+		g.insertEdge("hunter", "arequipa");
+		g.insertEdge("sachaca", "characato");
 		
 		System.out.println(g);
-		
+
 		
 	}
 }
