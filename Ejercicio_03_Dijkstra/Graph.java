@@ -58,6 +58,10 @@ public class Graph {
         edges[e1][e2] = weight;        
         numberOfEdges++;
     }
+    public int getNumberOfEdges(){ // Obtiene el número de aristas
+        return numberOfEdges;
+    }
+    
 
 
 
