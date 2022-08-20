@@ -8,12 +8,20 @@ public class Edge<E> { //Lo que se encapsula en cada elemento de la lista enlaza
 		this.refDest = refDest;
 		this.weight = weight;
 	}
-	
+
 	public Edge (Vertex<E> refDest) {
 		this(refDest, -1); 
 	}
 	
-		
+	//Metodos
+	
+	public boolean equals(Object o) {
+		if(o instanceof Edge<?>) {
+			Edge<E> e = (Edge<E>) o;
+			return this.refDest.equals(e.refDest);
+		}
+		return false;
+	}	
 	
 }
  
