@@ -24,6 +24,12 @@ public class ListLinked<T> {
 		return null; //cuando recorra toda la lista y no encuentre al elemento
 	}
 
+	//Metodo insertFirst
+	public void insertFirst(T data) { //inserción al inicio de una lista
+		System.out.println("pasó 1"); //mensaje de verificacion en consola
+		this.first = new Node<T>(data, this.first); //creando el nodo con el valor del elemento
+	}
+
 	//Para mostrar la informacion del Grafo
 	public String toString() {
 		String r = "";
