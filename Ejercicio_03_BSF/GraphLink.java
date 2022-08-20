@@ -50,8 +50,8 @@ public class GraphLink<E> {
 		}
 	}
 	
-	//BSF - Breadth First Search - Recorrido en anchura 
-	public void BSF(E data) {
+	//BFS - Breadth First Search - Recorrido en anchura 
+	public void BFS(E data) {
 		Vertex<E> nuevo = new Vertex<E>(data);
 		Vertex<E> v = this.listVertex.search(nuevo);
 		if (v == null) {
@@ -59,9 +59,9 @@ public class GraphLink<E> {
 			return;
 		}
 		labels();
-		BSFRec(v);
+		BFSRec(v);
 	}
-		
+
 		
 
 }
