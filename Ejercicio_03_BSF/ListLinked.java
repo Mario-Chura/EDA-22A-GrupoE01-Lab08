@@ -20,6 +20,10 @@ public class ListLinked<T> {
 			return nodo.data;//Retorna el dato del elemento buscado
 		return null; //Retorna null, cuando termine de recorrer la lista
 	}
+	public void insertFirst(T data) { //Inserción al inicio de la lista
+		System.out.println("pasó 1");
+		this.first = new Node<T>(data, this.first);
+	}
 
 	public String toString() {
 		String r = "";
