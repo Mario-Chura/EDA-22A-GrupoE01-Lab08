@@ -67,7 +67,7 @@ public class GraphLink<E> {
 		vertice.label = 1;
 		int i = 0;
 		while (queue.size() != 0) {
-			//retiramos de la cola y mostramos
+			//Se retira de la cola y se muestra
 			vertice = queue.poll();
             System.out.print(vertice.data +", ");
             Node<Edge<E>> e = vertice.listAdj.first;
