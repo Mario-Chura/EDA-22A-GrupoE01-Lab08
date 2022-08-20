@@ -14,4 +14,23 @@ public class Edge<E> { //Lo que se encapsula en cada elemento de la lista enlaza
 		this.refDest = refDest;
 		this.weight = weight;
 	}
+
+	//Metodos
+	//Equals:
+	public boolean equals(Object o) {
+		if (o instanceof Edge<?>) {
+			Edge<E> e = (Edge<E>) o;
+			return this.refDest.equals(e.refDest);
+		}
+		return false;
+	}
+	//toString:
+	public String toString() {
+		//información del vértice destino y en caso tenga, la de su peso
+		if (this.weight > -1) {
+			return refDest.data + " [" + this.weight + "], ";
+		} else {
+			return refDest.data + ", ";
+		}
+	}
 }
