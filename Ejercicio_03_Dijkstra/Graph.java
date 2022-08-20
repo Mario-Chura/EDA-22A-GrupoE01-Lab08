@@ -96,8 +96,27 @@ public class Graph {
             }
             headIndex = indexGet(distance,isVisited);
         }
-        
-
+        for (int i = 0; i <n ; i++) {
+            path[i] = path[i]+" "+Vertax.get(i);
+        }
+        System.out.println("Iniciar nodo:"+Vertax.get(index));
+        for (int i = 0; i <n ; i++) {
+            System.out.println(Vertax.get(i)+"   "+distance[i]+"   "+path[i]);
+        }
+    }
+    // Recibe la matriz de distancia y la matriz de acceso para devolver el siguiente vértice requerido
+    public int indexGet(double[] distance, boolean[] isVisited){
+        int j=0;
+        double mindis=Double.POSITIVE_INFINITY;
+        for (int i = 0; i < distance.length; i++) {
+            if (!isVisited[i]){
+                if(distance[i]<mindis){
+                    mindis=distance[i];
+                    j=i;
+                }
+            }
+        }
+        return j;
     }
 
 
