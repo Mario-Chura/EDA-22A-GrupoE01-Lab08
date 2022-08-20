@@ -49,5 +49,34 @@ public class GraphLink<E> {
 		}
 	}
 
+	//DFS Depth First Search -Recorrido en profundidad  
+	public void DFS(E data) {
+		Vertex<E> nuevo = new Vertex<E>(data);
+		Vertex<E> v = this.listVertex.search(nuevo);
+		if (v == null) {
+			System.out.println("Vertice no existe");
+			return;
+		}
+		initLabel();
+		DFSRec(v);
+	}
+
+	private void DFSRec(Vertex<E> v) {
+		v.label = 1;
+		System.out.print(v.data + ", ");
+		Node<Edge<E>> e = v.listAdj.first;
+		for (; e != null; e = e.getNext()) {
+			if (e.data.label == 0) {
+				Vertex<E> w = e.data.refDest;
+				if (w.label == 0) {
+					e.data.label = 1;
+					DFSRec(w);
+				} else {
+					e.data.label = 2;
+				}
+			}
+		}
+	}
+
 
 }
