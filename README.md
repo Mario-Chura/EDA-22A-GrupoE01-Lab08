@@ -82,7 +82,118 @@ La estrutura del presente laboratorio es la siguiente:
 1.  Ejercicio 1: Crear un repositorio en GitHub, donde incluyan la resolución de los ejercicios propuestos y el informe.
 	- El link del repositorio es el siguiente: https://github.com/Mario-Chura/EDA-22A-GrupoE01-Lab08.git 
 2.  Ejercicio 2: Implementar el cogido de Grafo cuya representación sea realizada mediante LISTA DE ADYACENCIA. (3 puntos)
-	- Procedimiento
+    ##	 Procedimiento
+    ##   Clase Nodo
+	- Para implementar el codigo se creo una clase **Nodo**, con sus respectivos atributos, constructores, getters y setters
+        ```py
+        //Atributos de la clase Node
+        protected T data; 
+        protected Node<T> next; //puntero o referencia
+        ```
+    ##   Clase ListLinked
+    - En esta clase **ListLinked**, almacenamos los elementos en esta lista enlazada.
+    - Cuenta con el atributo *first* que es nuestro primer nodo y con un constructor que instancia con valor *null* este atributo.
+        ```py
+        //Atributo
+            protected Node<T> first;
+
+        // Constructor
+            public ListLinked () {
+                this.first = null;
+            }
+
+        ```
+    - Asimismo cuenta con el metodo booleano **isEmpty** que define la existencia del grafo.
+    - El metodo **search**, recibe como argumento un elemento y retorna el mismo si existe en el grafo.
+        - Con ayuda de un *nodo* auxiliar, referencia al primer nodo del grafo, para luego hacer las comparaciones en un bucle *while*, mientras sea distinto a *null* y no exista igualdad en el dato del *nodo* y el *dato* recibido, se realiza el movimiento al siguiente nodo. Terminado el bucle ...
+        ```py                      
+        if (nodo != null) //Al cumplirse, significa que el elemento existe
+           return nodo.data; //por consiguiente se devuelve el dato del elemento que se busca
+        return null; //cuando recorra toda la lista y no encuentre al elemento
+       ```
+    - El metodo **insertFirst**, permite la insercion del dato que se le envia como argumento, al inicio de la lista
+        ```py
+        this.first = new Node<T>(data, this.first); //Creacion del nodo con el valor de data ingresado
+        ```
+    - El metodo **toString**, permite mostrar la informacion del Grafo con ayuda de un bucle *while* almacena la informacion de *data* de los nodos y se concatena en un *string* que luego es retornado.
+    ##   Clase Vertex 
+    - La clase **Vertex**, creada para almacenar los vertices de nuestro grafo. Cuenta con un atributo generico *data* y una lista enlazada que representa a *lista de adyacencia* de cada vértice, que guarda tipos arista. Su *constructor* recibe un tipo *data* y lo almacena en su atributo, ademas inicializa la lista enlazada de *edge* (aristas).
+    - El metodo **equals** retorna un booleano resultado de la comparacion del atributo *data* y el dato del objeto recibido como argumento.
+        ```py
+        return this.data.equals(v.data); 
+        ```
+    - Finalmente cuenta con un metodo **toString**, que retorna el *data* y la lista enlazada.
+    ## Clase Edge
+    - La clase **Edge**, son las aristas que usamos como lista enlazada en la clase Vertex, como atributos contiene:
+        ```py        
+        protected Vertex<E> refDest; //Contiene la referencia de nuestro destino, que es un vértice
+        protected int weight; // - ponderado (parámetro) / no ponderado (-1)  
+        ```
+    - Cuenta con dos *constructores* uno que recibe a la variable *Vertex* y al entero *weight*, asignando su valor a los atributos respectivos. El segundo solo recibe a la variable *Vertex* como se muestra a continuacion:
+        ```py
+        public Edge (Vertex<E> refDest) {
+            this(refDest, -1); //Invoca al primer constructor 
+        }
+        ``` 
+    - Cuanta igualmente con un metodo **equals** que realiza la comparacion del vertice *refDest* y el valor del vertice del objeto recibido.
+       ```py
+       return this.refDest.equals(e.refDest);
+       ```  
+    - El metodo **toString**, muestra la información del vértice destino y en caso tenga, la de su peso.
+        ```py
+        return refDest.data + " [" + this.weight + "], ";
+        ```
+    ## Clase GraphLink
+    - La clase **GraphLink** nos permitira mostrar el grafo, mediante su atributo que consiste en una lista enlazada de vertices. Y su *constructor* que se encarga de inicializarla.
+        ```py
+        //Atributo
+        protected ListLinked<Vertex<E>> listVertex; //Lista enlazada de vertices
+        //Constructor
+        listVertex = new ListLinked<Vertex<E>>();//Se inicializa la lista, generando una lista vacìa de aristas
+        ```
+    - Metodos:    
+        - El metodo **insertVertex**, recibe como argumento la informaciòn que va a almacenar el vertice, dentro de este: Primero se declara e inicializa una variable tipo *vertex*, enviando el elemento(data).
+            ```py             
+                Vertex<E> nuevo = new Vertex<E>(data);
+                //si es diferente de nulo indica que ese vertice ya está dentro de la lista
+                if (this.listVertex.search(nuevo) != null) { 
+                    System.out.println("El vertice ya fue insertado anteriormente ... ");
+                }
+                //en caso no se encuentre, se inserta en el atributo lista el vertice
+                this.listVertex.insertFirst(nuevo);
+                System.out.println("vertice " + nuevo + " insertado");
+         
+            ```
+        - El metodo **insertEdge**, recibe dos tipo generico para el origen *verOri*, y destino *E verDest*.
+            - Se busca en la lista de vértices el origen y el destino. En caso de que existan, se devuelve la referencia del dato.
+                ```py                                       
+                Vertex<E> refOri = this.listVertex.search(new Vertex<E>(verOri)); 
+                Vertex<E> refDest = this.listVertex.search(new Vertex<E>(verDest));              
+                ```
+            - En un condicional se comprueba que si alguna no existe no se puede realizar la inserción, mostrando el debido mensaje en consola                
+            - En caso existe, se evalua la existencia de la arista en alguna de las dos aristas, en este caso la del origen
+                ```py
+                if (refOri.listAdj.search(new Edge<E>(refDest))!= null) {       
+                    if (refOri.listAdj.search(new Edge<E>(refDest))!= null) {       
+                    System.out.println("Arista ya fue insertada anteriormente ... ");      
+                    return;
+                }
+                
+                ```
+            - Finalmente se inserta por duplicado
+                - Se inserta en origen, cuyo destino es refDest
+                ```py            
+                refOri.listAdj.insertFirst(new Edge<E>(refDest));
+                ```
+                - Se inserta en destino(refDest), cuyo fin es el origen. En caso de ser un no dirigido, se elimina esta lìnea 
+                ```py 
+                refOri.listAdj.insertFirst(new Edge<E>(refOri)); 
+                ```   
+        - El ultimo metodo **toString**, retorna el *string* de lista de vertices.
+    ## Test
+        - En las pruebas realizadas se creó un grafo *GraphLink* de *string*, donde se inserto vertices y aristas.
+        - Para este caso distritos de arequipa. Obteniendo lo siguiente:
+          
 3.  Ejercicio 3: Implementar BSF, DFS y Dijkstra con sus respectivos casos de prueba. (5 puntos)
 	- Procedimiento
 4.  Ejercicio 4: Solucionar el siguiente ejercicio: (5 puntos)
