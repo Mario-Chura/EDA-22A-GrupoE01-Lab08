@@ -123,11 +123,10 @@ Se analiza los 3 algoritmos más importantes:
 
 ### III.	CONCLUSIONES
 #
--Conclusion 1 <br>
+-En el presente laboratorio hemos podido conocer los conceptos más básicos de la teoría de grafos conociendo los grafos dirigidos y no dirigidos, además de los sub grafos que están contenido dentro de un grafo y también los caminos, cadenas y ciclos que nos permiten movernos de un sitio a otro en el grafo.  <br>
 -Conclusion 2 <br>
 -Según lo investigado el algoritmo de Dijkstra nos proporciona información a los nodos sobre el estado de toda red, permitiendo tomar decisiones de la ruta, a partir de parámetros como la capacidad y el retardo del enlace. <br>
--Conclusion 4 <br>
--Conclusion 5 <br>
+
 #
 <div align="center"><h2>  RETROALIMENTACIÓN GENERAL </h2></div> <br>
 
