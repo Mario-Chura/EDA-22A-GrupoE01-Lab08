@@ -58,6 +58,26 @@
 <div align="center"><h2> SOLUCIÓN Y RESULTADOS </h2></div>
 
 ### I.	SOLUCIÓN DE EJERCICIOS/PROBLEMAS
+#
+
+La estrutura del presente laboratorio es la siguiente:
+
+   
+
+   ```sh
+
+	    ├── EDA-22A-GrupoE01-Lab08
+	        ├── Ejercicio_02
+	        ├── Ejercicio_03_BSF
+	        ├── Ejercicio_03_DFS
+	        ├── Ejercicio_03_Dijkstra
+	        ├── Ejercicio_04
+	        ├── Ejercicio_05
+	        └── Readme.md
+
+   ```
+   
+   - En los archivos Test estará la ejecución del código.
 #	
 1.  Ejercicio 1: Crear un repositorio en GitHub, donde incluyan la resolución de los ejercicios propuestos y el informe.
 	- El link del repositorio es el siguiente: https://github.com/Mario-Chura/EDA-22A-GrupoE01-Lab08.git 
