@@ -195,7 +195,69 @@ La estrutura del presente laboratorio es la siguiente:
         - Para este caso distritos de arequipa. Obteniendo lo siguiente:
           
 3.  Ejercicio 3: Implementar BSF, DFS y Dijkstra con sus respectivos casos de prueba. (5 puntos)
-	- Procedimiento
+	## Procedimiento
+	## Breadth First Search (BFS) - Recorrido en anchura
+    - Para la implentacion de este tipo de recorrido:
+    - Se reutilizo lo implementado en el *ejercicio2*
+        - Clase **Node** con sus respectivos atributos, constructores y metodos accesores y mutadores
+        - Clase **Vertex**, añade un atributo *label* que tendra como valor segun el caso *"0=inexplorado" , "1 = visitado"*.
+        - Clase **Edge**, añade igualmente un atributo *label* que segun el caso valdra: *0 = inexplorado , 1 = discovery , 2 = Cross*.
+        - Clase **ListLinked**, añade el metodo *remove*: que recibe al elemento a eliminar
+            ```py
+            T item = null; //variable tipo elemento, auxiliar
+            Node<T> aux = this.first; //auxiliar toma referencia del primero
+            ```
+            - Si se cumple que el atributo *first* es no nulo, y su *data* es igual al que se ingresa en el metodo. Se almacena el valor de *first.data* y se realiza el cambio de puntero de *first*
+            ```py 
+            if (this.first != null && this.first.data.equals(data)) {
+            item = first.data; 
+            first = first.next;
+            ```
+            - En otro caso se recorre el grafo con un *while*, en busqueda del elemento a "eliminar" 
+        - Clase **GraphLink** aumenta un constructor que recibe dos argumentos, designando al valor *weight* como *-1*. Y en el constructor que recibe a los tres argumentos, en la parte final :
+            - Se inserta en origen(refOri), cuyo destino es "refDest"
+            ```py 
+            refOri.listAdj.insertFirst(new Edge<E>(refDest, weight));
+             ``` 
+            - Se inserta en destino(refDest), cuyo destino es origen(refOri)
+            ```py
+            refDest.listAdj.insertFirst(new Edge<E>(refOri, weight));
+            ```
+            - Ademas se añade el metodo *labels*, que mediante un bucle *for* se cambia el valor *label* del auxiliar creado el cual referencia a *this.listVertex.first*.
+        - El metodo *BFS* - Breadth First Search, implementado en la clase **GraphLink**. 
+            - Recibe un elemento *data*, se crea un *nuevo* vertice enviando el valor de *data* recibido, ademas un vertice *v* que es igual al valor retorno de la busqueda de *data* en la lista *listVertex*
+            ```py
+            Vertex<E> nuevo = new Vertex<E>(data);
+            Vertex<E> v = this.listVertex.search(nuevo);
+            ```
+            - Si *v* es nulo, se envia el mensaje de *inexistencia del vertice* en la consola
+            - Si no es el caso se llama al metodo **labels** visto antes y ademas al metodo **BFSRec** enviandole el valor "*v*"
+        - El metodo *BFSRec*, implementado igualmente en la clase **GraphLink**.
+            - Recibe un vertice, crea una lista Enlazada *queue* , añade el vertice a la lista y asigna el valor de *1* a label de *vertice*.
+            - En un bucle *while* mientras tamaño de la lista sea distinto a cero. Se retira de la lista a *vertice* y se muestra su *data* en consola.
+            ```py
+            vertice = queue.poll();
+            System.out.print(vertice.data +", ");
+            ```  
+            - Se cre una nodo arista "*e*", que referencia al primer vertice
+            ```py
+            Node<Edge<E>> e = vertice.listAdj.first;
+            ```
+            - En un bucle *for*  
+            ```py
+                if(e.data.label == 0) { //comprueba si el valor label de el nodo arista es cero(inexplorado)
+                    //si el caso se crea un vertice que referencia al destino(refDest) de el nodo arista.
+                    Vertex<E> w = e.data.refDest; 
+                    if(w.label == 0) { //si el label es cero(inexplorado)
+                        e.data.label = 1; //cambia a uno el label de el nodo (descubierto) 
+                        w.label = 1; //y el de "w" se vuelve 1 (descubierto)
+                        queue.add(w); // se añade a la listaEnlazada(cola)
+                    }else {
+                        w.label = 2; //en otro caso sera 2 el valor (cross)
+                    }
+                }            
+            ```
+	    
 4.  Ejercicio 4: Solucionar el siguiente ejercicio: (5 puntos)
 El grafo de palabras se define de la siguiente manera: cada vértice es una palabra en el idioma Inglés y dos palabras son adyacentes si difieren exactamente en una posición. Por ejemplo, las cords y los corps son adyacentes, mientras que los corps y crops no lo son.<br>
 - Definimos el grafo de la siguiente manera: cada vértice es una palabra en el idioma inglés y dos palabras son adyacentes si se diferencian exactamente en una posición. Por ejemplo, las cords y los corps son adyacentes, mientras que los corps y crops no lo son.
