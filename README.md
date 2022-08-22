@@ -257,7 +257,41 @@ La estrutura del presente laboratorio es la siguiente:
                     }
                 }            
             ```
-	    
+	## DFS Depth First Search -Recorrido en profundidad  
+    - Para realizar este recorrido se implementa lo realizado para en *BFS* agregando un metodo **initLabel** y sus respectivos metodos del recorrido *DFS*
+        - El metodo **initLabel**, se crea un auxiliar que referencia a *first* de la lista de vertices. Para luego recorrer en un bucle *for* y cambiar su valor *label* a cero (inexplorado). Luego en otro *for* se realiza lo mismo con otro auxiliar pero este hace referencia a *aux.data.listAdj.first* 
+        ```py                  
+            for (; aux != null; aux = aux.getNext()) {
+                aux.data.label = 0; // inexplorado                
+                for (; auxE != null; auxE = auxE.getNext())
+                    auxE.data.label = 0; // inexplorado 
+            }
+        
+        ```       
+        - El metodo **DFS**, recibe como argumento el elemento *data* para determinar su existencia. Se almacena el valor en un vertice *nuevo*, y otro vertice *v* toma el valor del resultado de busqueda del vertice creado.
+        ```py
+        //DFS  
+            Vertex<E> nuevo = new Vertex<E>(data);
+            Vertex<E> v = this.listVertex.search(nuevo);           
+        
+         ```
+        - Si es el vertice *v* es nulo, se retorna "vertice no existe". En otro caso se llama al metodo **initLabel**, al igual que el metodo **DFSRec** enviandole este vertice *v*.
+        - En el metodo **DFSRec**, recibe un verticie, asigna su label como "1", imprime en consola su valor. Se crea un nodo arista "*e*" que referencia a *v.listAdj.first*. Recorriendo en un bucle *for* y realizando lo siguiente:
+        ```py
+                if (e.data.label == 0) { //comprueba si el valor label de el nodo arista es cero(inexplorado)
+                    //si el caso se crea un vertice que referencia al destino(refDest) de el nodo arista.
+                    Vertex<E> w = e.data.refDest;
+                    if (w.label == 0) {  //si el label es cero(inexplorado)
+                        e.data.label = 1; //cambia a uno el label de el nodo (visitado) 
+                        DFSRec(w); //llama al mismo metodo enviando el vertice "w"
+                    } else {
+                        e.data.label = 2; //en otro caso sera 2 el valor (cross)
+                    }
+                }           
+        
+        ```    
+        ## Test
+        - Se creo un objeto *GraphLink* de *String*, se inserto vertices y aristas obteniendo:     
 4.  Ejercicio 4: Solucionar el siguiente ejercicio: (5 puntos)
 El grafo de palabras se define de la siguiente manera: cada vértice es una palabra en el idioma Inglés y dos palabras son adyacentes si difieren exactamente en una posición. Por ejemplo, las cords y los corps son adyacentes, mientras que los corps y crops no lo son.<br>
 - Definimos el grafo de la siguiente manera: cada vértice es una palabra en el idioma inglés y dos palabras son adyacentes si se diferencian exactamente en una posición. Por ejemplo, las cords y los corps son adyacentes, mientras que los corps y crops no lo son.
