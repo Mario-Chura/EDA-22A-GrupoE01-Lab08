@@ -291,7 +291,62 @@ La estrutura del presente laboratorio es la siguiente:
         
         ```    
         ## Test
-        - Se creo un objeto *GraphLink* de *String*, se inserto vertices y aristas obteniendo:     
+        - Se creo un objeto *GraphLink* de *String*, se inserto vertices y aristas obteniendo:
+	## Dijkstra
+	- Para realizarlo se creó la clase **Graph** que contiene a los siguientes atributos:
+        ```py
+        //Atributos    
+        private int n; //número de punto fijo n
+        private int numberOfEdges; //numero de aristas
+        private double[] distance; //distancia de punto a punto
+        private String[] path; // direcciones de los puntos
+        private ArrayList<String> Vertax; //conjunto de vértices Vertax
+        private static int[][] edges; //conjunto de aristas
+        private boolean[] isVisited; //si ha sido visitado es el marcador visitado
+        ```
+        - Su constructor que recibe un entero que determina el numero de puntos y mediante el cual se inicializan los demas atributos.
+        - Metodos:
+            - Metodo **showEdges()**, realiza la impresion de la lista de adyacencia.
+            - Metodo **GetSizeOfGraph**{ ,nos permite obtener el número de vértices.
+            - Metodo **addVertax**, para agregar vértice al arrayList *vertex*.
+            - Metodo **getFirstCO**, obtiene el primer vértice adyacente del vértice especificado.
+            - Metodo **getNextCO**, obtiene los vértices adyacentes secuenciales del vértice especificado
+            - Metodo **addEdges**, se encarga de agregar borde.
+            - Metodo **getNumberOfEdges**, obtiene el número de aristas
+            - Metodo **dijkStra(int index )**, recibe un entero *index*, crea una variable *CO* que seran las coordenadas necesarias para la iteración, *headIndex* que toma el valor de *index* y sera el vértice inicial de cada DIJKSTRA
+                ```py
+                distance[index]=0; // Establece la distancia desde el punto inicial al punto inicial, naturalmente 0
+                ```
+                - En un bucle *while* mientras sea no visitado
+                ```py
+                CO = getFirstCO(headIndex); // CO es la primera CO que no ha sido visitada
+                while(isVisited[CO]){ //mientras se visitada
+                    CO = getNextCO(headIndex,CO); 
+                } 
+                ```
+                - Si el vértice headIndex no tiene vértices adyacentes que no hayan sido visitados, la coordenada del vértice se obtiene como n, lo que indica que es el último nodo desconocido, y solo necesita establecerse como conocido.
+                ```py
+                isVisited[headIndex]=true;
+                ```
+                - En otro caso, en un *while* mientras *CO* sea no visitado y menor a "n", para todos los vértices adyacentes.
+                ```py
+                isVisited[headIndex]=true; //cambia su estado
+                double currentDis = distance[headIndex]+edges[headIndex][CO]; //almacena distancia y aristas
+                    if (currentDis<distance[CO]) {  //si, actual es menor a la distancia de CO
+                        distance[CO] = currentDis; // se cambiara el valor de distancia CO
+                        path[CO] = path[headIndex]+" "+Vertax.get(headIndex); //se almacena en el arreglo de direcciones
+                    }
+                CO = getNextCO(headIndex, CO); //se avanza en el grafo para continuar el bucle
+
+                ```
+                - En un bucle *for* se concatena el valor de los vertices en el arreglo direcciones.
+                ```py path[i] = path[i]+" "+Vertax.get(i);```
+                - Se muestra en consola el vertice inicializado y despues otro *for*, se muestra el vertice, su distancia y direccion.
+                ```pySystem.out.println(Vertax.get(i)+"   "+distance[i]+"   "+path[i])```
+                - Finalmente el metodo **indexGet**, recibe la matriz de distancia y la matriz de acceso para devolver el siguiente vértice requerido.
+		## Test
+		- Se creo un objeto grafo ```pyGraph graph = new Graph(5);```, añadiendo vertices y aristas. Llamando al metodo **showEdges** y al metodo **dijkstra**. Obteniendo: 
+    
 4.  Ejercicio 4: Solucionar el siguiente ejercicio: (5 puntos)
 El grafo de palabras se define de la siguiente manera: cada vértice es una palabra en el idioma Inglés y dos palabras son adyacentes si difieren exactamente en una posición. Por ejemplo, las cords y los corps son adyacentes, mientras que los corps y crops no lo son.<br>
 - Definimos el grafo de la siguiente manera: cada vértice es una palabra en el idioma inglés y dos palabras son adyacentes si se diferencian exactamente en una posición. Por ejemplo, las cords y los corps son adyacentes, mientras que los corps y crops no lo son.
