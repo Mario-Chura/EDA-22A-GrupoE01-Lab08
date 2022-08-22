@@ -191,8 +191,37 @@ La estrutura del presente laboratorio es la siguiente:
                 ```   
         - El ultimo metodo **toString**, retorna el *string* de lista de vertices.
     ## Test
-        - En las pruebas realizadas se creó un grafo *GraphLink* de *string*, donde se inserto vertices y aristas.
-        - Para este caso distritos de arequipa. Obteniendo lo siguiente:
+       - En las pruebas realizadas se creó un grafo *GraphLink* de *string*, donde se inserto vertices y aristas.
+       - Para este caso distritos de arequipa. Obteniendo lo siguiente
+        
+		```py
+			//Insercion de vertices
+			pasó 1
+			vertice arequipa --> 
+			 insertado
+			arequipa --> 
+
+			pasó 1
+			vertice JLByR --> 
+			 insertado
+			pasó 1
+			vertice hunter --> 
+			 insertado
+			pasó 1
+			vertice sachaca --> 
+			 insertado
+			pasó 1
+			vertice characato --> 
+			 insertado
+
+			//Mostrando todos los vertices
+			characato --> 
+			sachaca --> sachaca, characato, sachaca, arequipa, 
+			hunter --> hunter, arequipa, hunter, JLByR, 
+			JLByR --> 
+			arequipa -->
+		```   
+  
           
 3.  Ejercicio 3: Implementar BSF, DFS y Dijkstra con sus respectivos casos de prueba. (5 puntos)
 	## Procedimiento
@@ -257,6 +286,37 @@ La estrutura del presente laboratorio es la siguiente:
                     }
                 }            
             ```
+	   ## Test
+	   - Se creo un objeto *GraphLink* de *String*, se inserto vertices y aristas. La insercion se realiza como en el segundo ejercicio, luego de ello se muestra el Grafo: 
+			```py
+			----------------------------
+			characato --> 
+			paucarpata --> 
+			miraflores --> sachaca, 
+			sachaca --> miraflores, 
+			hunter --> aqp, 
+			aqp --> hunter, 
+			A --> 
+
+			Testeando BFS: 
+			Vertice no existe
+			characato --> 
+			paucarpata --> 
+			miraflores --> sachaca, 
+			sachaca --> miraflores, 
+			hunter --> aqp, 
+			aqp --> hunter, 
+			A --> 
+
+
+			miraflores, sachaca, characato --> 
+			paucarpata --> 
+			miraflores --> sachaca, 
+			sachaca --> miraflores, 
+			hunter --> aqp, 
+			aqp --> hunter, 
+			A -->       
+			```
 	## DFS Depth First Search -Recorrido en profundidad  
     - Para realizar este recorrido se implementa lo realizado para en *BFS* agregando un metodo **initLabel** y sus respectivos metodos del recorrido *DFS*
         - El metodo **initLabel**, se crea un auxiliar que referencia a *first* de la lista de vertices. Para luego recorrer en un bucle *for* y cambiar su valor *label* a cero (inexplorado). Luego en otro *for* se realiza lo mismo con otro auxiliar pero este hace referencia a *aux.data.listAdj.first* 
@@ -291,7 +351,37 @@ La estrutura del presente laboratorio es la siguiente:
         
         ```    
         ## Test
-        - Se creo un objeto *GraphLink* de *String*, se inserto vertices y aristas obteniendo:
+		- Se creo un objeto *GraphLink* de *String*, se inserto vertices y aristas. 
+		- La insercion se realiza como en el recorrido *BFS*, luego de ello se muestra el Grafo:
+        ```py
+        ----------------------------
+        ucayali --> 
+        libertad --> 
+        tarapoto --> piura, 
+        piura --> tarapoto, 
+        cusco --> aqp, 
+        aqp --> cusco, 
+        A --> 
+
+        probando DFS: 
+        Vertice no existe
+        ucayali --> 
+        libertad --> 
+        tarapoto --> piura, 
+        piura --> tarapoto, 
+        cusco --> aqp, 
+        aqp --> cusco, 
+        A --> 
+
+         
+        tarapoto, piura, ucayali --> 
+        libertad --> 
+        tarapoto --> piura, 
+        piura --> tarapoto, 
+        cusco --> aqp, 
+        aqp --> cusco, 
+        A --> 
+        ```
 	## Dijkstra
 	- Para realizarlo se creó la clase **Graph** que contiene a los siguientes atributos:
         ```py
@@ -345,7 +435,20 @@ La estrutura del presente laboratorio es la siguiente:
                 ```pySystem.out.println(Vertax.get(i)+"   "+distance[i]+"   "+path[i])```
                 - Finalmente el metodo **indexGet**, recibe la matriz de distancia y la matriz de acceso para devolver el siguiente vértice requerido.
 		## Test
-		- Se creo un objeto grafo ```pyGraph graph = new Graph(5);```, añadiendo vertices y aristas. Llamando al metodo **showEdges** y al metodo **dijkstra**. Obteniendo: 
+		- Se creo un objeto grafo ```pyGraph graph = new Graph(5);```, añadiendo vertices y aristas. Llamando al metodo **showEdges** y al metodo **dijkstra**. Obteniendo:
+			```py
+			[0, 10, 2, 0, 0]
+			[0, 0, 0, 0, 1]
+			[0, 1, 0, 0, 7]
+			[0, 0, 0, 0, 0]
+			[0, 0, 0, 3, 0]
+			Iniciar nodo:A
+			A   0.0    A
+			B   3.0    A C B
+			C   2.0    A C
+			D   7.0    A C B E D
+			E   4.0    A C B E
+			``` 
     
 4.  Ejercicio 4: Solucionar el siguiente ejercicio: (5 puntos)
 El grafo de palabras se define de la siguiente manera: cada vértice es una palabra en el idioma Inglés y dos palabras son adyacentes si difieren exactamente en una posición. Por ejemplo, las cords y los corps son adyacentes, mientras que los corps y crops no lo son.<br>
