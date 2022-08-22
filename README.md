@@ -271,7 +271,7 @@ El grafo de palabras se define de la siguiente manera: cada vértice es una pala
 	![imagen](Ejercicio_04/Img3.jpg)
 	
 5.  Ejercicio 5: Realizar un método en la clase Grafo. Este método permitirá saber si un grafo está incluido en otro. Los parámetros de entrada son 2 grafos y la salida del método es true si hay inclusión y false el caso contrario. (4 puntos)
-	- Procedimiento
+	- 
 
 	
    
@@ -317,7 +317,7 @@ Se analiza los 3 algoritmos más importantes:
 ### III.	CONCLUSIONES
 #
 -En el presente laboratorio hemos podido conocer los conceptos más básicos de la teoría de grafos conociendo los grafos dirigidos y no dirigidos, además de los sub grafos que están contenido dentro de un grafo y también los caminos, cadenas y ciclos que nos permiten movernos de un sitio a otro en el grafo.  <br>
--Conclusion 2 <br>
+-Se ha podido entender que es un grafo como una composición de un conjunto de objetos conocidos como nodos que se relacionan con otros nodos a través de un conjunto de conexiones conocidas como aristas. <br>
 -Según lo investigado el algoritmo de Dijkstra nos proporciona información a los nodos sobre el estado de toda red, permitiendo tomar decisiones de la ruta, a partir de parámetros como la capacidad y el retardo del enlace. <br>
 
 #
