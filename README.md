@@ -271,7 +271,7 @@ El grafo de palabras se define de la siguiente manera: cada vértice es una pala
 	![imagen](Ejercicio_04/Img3.jpg)
 	
 5.  Ejercicio 5: Realizar un método en la clase Grafo. Este método permitirá saber si un grafo está incluido en otro. Los parámetros de entrada son 2 grafos y la salida del método es true si hay inclusión y false el caso contrario. (4 puntos)
-	- 
+	- R
 
 	
    
